@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "account.proto";
+
+message Project {
+    string name = 1;
+    string description = 2;
+    string goal = 3;
+    string gathered = 4;
+    string status = 5;
+}
+
+message ProjectsContainer {
+    repeated Project projects = 1;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+message PGPayload {
+    string action = 100;
+
+    oneof options {
+    CreateAccountAction createaccount = 200;
+    ChargeAccountAction chargeaccount = 201;
+    CreateProjectAction createProject = 202;
+    DonateProjectAction donateProject = 203;
+    }
+}
+
+
+message CreateAccountAction {
+    string username = 1;
+}
+
+message ChargeAccountAction {
+    string amount = 1;
+}
+
+message CreateProjectAction {
+    string name = 1;
+    string description = 2;
+    string goal = 3;
+}
+
+message DonateProjectAction {
+    string project = 1;
+    string amount = 2;
+}
